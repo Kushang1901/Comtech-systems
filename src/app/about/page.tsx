@@ -25,8 +25,8 @@ export default function About() {
             </h2>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '16px', fontSize: '15px', lineHeight: '1.8' }}>
               Founded and managed by <strong>Shashi Bhushan Sharma</strong>, Comtech Systems has grown from a local
-              service provider to a multi-faceted enterprise serving clients across Gurgaon and the Noida Extension
-              area. We specialize in maintaining the hardware that keeps your business running smoothly, while
+              service provider to a multi-faceted enterprise serving clients across Delhi NCR
+              . We specialize in maintaining the hardware that keeps your business running smoothly, while
               providing top-notch creative and custom-tailored branding options through print.
             </p>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '16px', fontSize: '15px', lineHeight: '1.8' }}>
@@ -35,7 +35,7 @@ export default function About() {
               ensuring that corporate printing setups can run sustainably and cost-effectively.
             </p>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '26px', fontSize: '15px', lineHeight: '1.8' }}>
-              From bespoke visiting cards to executive letterhead printing and high-end corporate gifts, we bring
+              From bespoke visiting cards to executive letterhead printing and high-end corporate gifts and customized printing, we bring
               premium branding and quality craftsmanship to every design.
             </p>
             <Link href="/contact" className="btn btn-primary">Connect With Us</Link>

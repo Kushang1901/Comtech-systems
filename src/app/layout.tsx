@@ -64,6 +64,63 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Comtech Systems",
+              "image": "https://www.comtech-systems.in/sales&repair.png",
+              "@id": "https://www.comtech-systems.in/#localbusiness",
+              "url": "https://www.comtech-systems.in",
+              "telephone": "+919811767644",
+              "priceRange": "$$",
+              "address": [
+                {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Ground Floor, 669/17, Sukhrali Road, Sector 17A",
+                  "addressLocality": "Gurgaon",
+                  "addressRegion": "Haryana",
+                  "postalCode": "122001",
+                  "addressCountry": "IN"
+                },
+                {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Sec-1, Noida Extn",
+                  "addressLocality": "Noida",
+                  "addressRegion": "Uttar Pradesh",
+                  "postalCode": "201301",
+                  "addressCountry": "IN"
+                }
+              ],
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday"
+                  ],
+                  "opens": "09:00",
+                  "closes": "19:00"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": "Sunday",
+                  "opens": "11:00",
+                  "closes": "16:00"
+                }
+              ],
+              "sameAs": [
+                "https://github.com/Kushang1901/Comtech-systems"
+              ]
+            })
+          }}
+        />
       </head>
       <body style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <Preloader />
