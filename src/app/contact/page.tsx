@@ -77,7 +77,7 @@ export default function Contact() {
               {
                 icon: <><path d="M20 10c0 6-8 13-8 13s-8-7-8-13a8 8 0 0 1 16 0z" /><circle cx="12" cy="10" r="3" /></>,
                 title: 'Gurgaon Head Office',
-                lines: ['Ground Floor, 669/17, Sukhrali Road', 'Sector 17A, Gurgaon — 122001'],
+                lines: [' Sukhrali Road', 'Sector 17A, Gurgaon — 122001'],
               },
               {
                 icon: <><path d="M20 10c0 6-8 13-8 13s-8-7-8-13a8 8 0 0 1 16 0z" /><circle cx="12" cy="10" r="3" /></>,

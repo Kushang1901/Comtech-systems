@@ -16,7 +16,7 @@ export default function Footer() {
               Managed by Shashi Bhushan Sharma
             </p>
           </div>
-          
+
           <div className="footer-col">
             <h3>Quick Links</h3>
             <ul className="footer-links">
@@ -27,7 +27,7 @@ export default function Footer() {
               <li><Link href="/contact">Contact Us</Link></li>
             </ul>
           </div>
-          
+
           <div className="footer-col">
             <h3>Contact Info</h3>
             <ul className="footer-links" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -53,7 +53,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          
+
           <div className="footer-col">
             <h3>Locations</h3>
             <ul className="footer-links" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -64,7 +64,7 @@ export default function Footer() {
                 </svg>
                 <div>
                   <strong style={{ fontSize: '14px', color: 'var(--text-primary)', display: 'block', marginBottom: '2px' }}>Gurgaon (Head Office)</strong>
-                  <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: '1.4' }}>Ground Floor, 669/17, Sukhrali Road, Sector 17A, Gurgaon - 122001</p>
+                  <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: '1.4' }}> Sukhrali Road, Sector 17A, Gurgaon - 122001</p>
                 </div>
               </li>
               <li style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
@@ -80,15 +80,15 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        
+
         <div className="footer-bottom">
           <div>
             <p>&copy; {currentYear} Comtech Systems. All rights reserved.</p>
             <p style={{ fontSize: '12px', marginTop: '4px' }}>
               Designed and developed by{' '}
-              <a 
-                href="https://kushangacharya.vercel.app" 
-                target="_blank" 
+              <a
+                href="https://kushangacharya.vercel.app"
+                target="_blank"
                 rel="noopener noreferrer"
                 style={{ color: 'var(--accent-color)', fontWeight: 600 }}
               >

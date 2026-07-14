@@ -79,7 +79,7 @@ export default function RootLayout({
               "address": [
                 {
                   "@type": "PostalAddress",
-                  "streetAddress": "Ground Floor, 669/17, Sukhrali Road, Sector 17A",
+                  "streetAddress": " Sector 17A",
                   "addressLocality": "Gurgaon",
                   "addressRegion": "Haryana",
                   "postalCode": "122001",
