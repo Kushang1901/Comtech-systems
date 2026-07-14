@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 
 const OWNER_PHONE = '+919811767644';
 const OWNER_WHATSAPP = '919811767644';
-const OWNER_EMAIL = 'comtechsystems.sec18@gmail.com';
+const OWNER_EMAIL = 'sbsharma@comtech-systems.in';
 
 export default function FloatingWidgets() {
   const [showScroll, setShowScroll] = useState(false);

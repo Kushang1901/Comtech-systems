@@ -23,6 +23,7 @@ export default function Footer() {
               <li><Link href="/">Home</Link></li>
               <li><Link href="/about">About Us</Link></li>
               <li><Link href="/services">Services & Products</Link></li>
+              <li><Link href="/careers">Careers</Link></li>
               <li><Link href="/contact">Contact Us</Link></li>
             </ul>
           </div>
@@ -45,7 +46,8 @@ export default function Footer() {
                   <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                 </svg>
                 <div style={{ wordBreak: 'break-all' }}>
-                  <a href="mailto:comtechsystems.sec18@gmail.com" style={{ display: 'block', fontSize: '13px', lineHeight: '1.4' }}>comtechsystems.sec18@gmail.com</a>
+                  <a href="mailto:sbsharma@comtech-systems.in" style={{ display: 'block', fontSize: '13px', lineHeight: '1.4', fontWeight: 600 }}>sbsharma@comtech-systems.in</a>
+                  <a href="mailto:comtechsystems.sec18@gmail.com" style={{ display: 'block', fontSize: '13px', lineHeight: '1.4', marginTop: '4px' }}>comtechsystems.sec18@gmail.com</a>
                   <a href="mailto:sbsharma7644@gmail.com" style={{ display: 'block', fontSize: '13px', lineHeight: '1.4', marginTop: '4px' }}>sbsharma7644@gmail.com</a>
                 </div>
               </li>
