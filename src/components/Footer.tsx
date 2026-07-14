@@ -82,7 +82,20 @@ export default function Footer() {
         </div>
         
         <div className="footer-bottom">
-          <p>&copy; {currentYear} Comtech Systems. All rights reserved.</p>
+          <div>
+            <p>&copy; {currentYear} Comtech Systems. All rights reserved.</p>
+            <p style={{ fontSize: '12px', marginTop: '4px' }}>
+              Designed and developed by{' '}
+              <a 
+                href="https://kushangacharya.vercel.app" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{ color: 'var(--accent-color)', fontWeight: 600 }}
+              >
+                Kushang Acharya
+              </a>
+            </p>
+          </div>
           <p>Sales | Service | Recycling | Printing</p>
         </div>
       </div>
