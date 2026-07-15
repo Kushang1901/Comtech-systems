@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Script from "next/script";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { QuoteModalProvider } from "@/context/QuoteModalContext";
@@ -78,7 +79,7 @@ export default function RootLayout({
               "priceRange": "$$",
               "address": [
                 {
-                  "@type": "PostalAddress",
+                  "@type": "PostalAd  dress",
                   "streetAddress": " Sector 17A",
                   "addressLocality": "Gurgaon",
                   "addressRegion": "Haryana",
@@ -133,6 +134,10 @@ export default function RootLayout({
           <QuoteModal />
           <FloatingWidgets />
         </QuoteModalProvider>
+        <Script
+          src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_V3_SITE_KEY}`}
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
