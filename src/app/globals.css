@@ -42,6 +42,10 @@ body {
   line-height: 1.6;
 }
 
+body {
+  padding-top: 88px;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -70,8 +74,11 @@ a {
    NAVIGATION HEADER
    ============================================================ */
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 100;
   background-color: rgba(248, 250, 252, 0.92);
   backdrop-filter: blur(12px);

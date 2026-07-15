@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -8,7 +9,15 @@ export default function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-col">
-            <h3 style={{ color: 'var(--accent-color)', fontWeight: 700, fontFamily: "'Fredoka', sans-serif", letterSpacing: '0.2px', textTransform: 'uppercase', fontSize: '20px' }}>COMTECH SYSTEMS</h3>
+            <Link href="/" style={{ display: 'inline-block', marginBottom: '16px' }}>
+              <Image
+                src="/web_title.png"
+                alt="Comtech Systems Logo"
+                width={200}
+                height={50}
+                style={{ objectFit: 'contain' }}
+              />
+            </Link>
             <p style={{ marginBottom: '16px' }}>
               Your trusted partner for computer sales, repairs, cartridge refilling, and sustainable electronics recycling.
             </p>
