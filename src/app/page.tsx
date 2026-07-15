@@ -22,8 +22,8 @@ export default function Home() {
           </div>
 
           {/* Decorative SVG */}
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <svg width="100%" height="280" viewBox="0 0 380 280" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ maxWidth: '380px' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
+            <svg width="100%" height="330" viewBox="0 0 380 280" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ maxWidth: '450px' }}>
               <rect x="16" y="30" width="348" height="200" rx="14" fill="#f8fafc" stroke="#e2e8f0" strokeWidth="1.5" />
               <rect x="36" y="50" width="308" height="140" rx="8" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1" />
               <line x1="174" y1="230" x2="206" y2="230" stroke="#cbd5e1" strokeWidth="4" strokeLinecap="round" />
@@ -34,9 +34,20 @@ export default function Home() {
               <circle cx="304" cy="108" r="22" fill="#eff1fb" />
               <rect x="296" y="100" width="16" height="16" rx="2" stroke="#3b4cb4" strokeWidth="2" />
               <line x1="300" y1="108" x2="308" y2="108" stroke="#3b4cb4" strokeWidth="2" />
-              <circle cx="190" cy="128" r="4" fill="#3b4cb4" />
-              <circle cx="170" cy="128" r="4" fill="#94a3b8" />
-              <circle cx="210" cy="128" r="4" fill="#94a3b8" />
+              
+              {/* Animated Loading Dots */}
+              <circle cx="170" cy="128" r="4" fill="#94a3b8">
+                <animate attributeName="cy" values="128;120;128" dur="1.2s" begin="0s" repeatCount="indefinite" />
+                <animate attributeName="fill" values="#94a3b8;#3b4cb4;#94a3b8" dur="1.2s" begin="0s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="190" cy="128" r="4" fill="#3b4cb4">
+                <animate attributeName="cy" values="128;120;128" dur="1.2s" begin="0.2s" repeatCount="indefinite" />
+                <animate attributeName="fill" values="#3b4cb4;#94a3b8;#3b4cb4" dur="1.2s" begin="0.2s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="210" cy="128" r="4" fill="#94a3b8">
+                <animate attributeName="cy" values="128;120;128" dur="1.2s" begin="0.4s" repeatCount="indefinite" />
+                <animate attributeName="fill" values="#94a3b8;#3b4cb4;#94a3b8" dur="1.2s" begin="0.4s" repeatCount="indefinite" />
+              </circle>
             </svg>
           </div>
         </div>
