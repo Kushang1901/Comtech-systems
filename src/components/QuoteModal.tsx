@@ -13,60 +13,10 @@ export default function QuoteModal() {
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
-  const recaptchaWidgetId = useRef<number | null>(null);
-
-  useEffect(() => {
-    if (!isOpen) return;
-
-    const renderCaptcha = () => {
-      const grecaptchaObj = (window as any).grecaptcha;
-      if (grecaptchaObj && grecaptchaObj.render && recaptchaWidgetId.current === null) {
-        try {
-          recaptchaWidgetId.current = grecaptchaObj.render('recaptcha-quote-modal', {
-            sitekey: '6LfyfFUtAAAAALgd8uEBAEaOpLJbickTklk4WhiB',
-          });
-        } catch (error) {
-          console.error("reCAPTCHA modal render error:", error);
-        }
-      }
-    };
-
-    const grecaptchaObj = (window as any).grecaptcha;
-    if (grecaptchaObj) {
-      grecaptchaObj.ready(renderCaptcha);
-    } else {
-      const interval = setInterval(() => {
-        const currentGrecaptcha = (window as any).grecaptcha;
-        if (currentGrecaptcha) {
-          clearInterval(interval);
-          currentGrecaptcha.ready(renderCaptcha);
-        }
-      }, 500);
-      return () => {
-        clearInterval(interval);
-        recaptchaWidgetId.current = null;
-      };
-    }
-
-    return () => {
-      recaptchaWidgetId.current = null;
-    };
-  }, [isOpen]);
-
   if (!isOpen) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
-    const grecaptchaObj = (window as any).grecaptcha;
-    if (grecaptchaObj && recaptchaWidgetId.current !== null) {
-      const captchaResponse = grecaptchaObj.getResponse(recaptchaWidgetId.current);
-      if (!captchaResponse) {
-        alert('Please complete the CAPTCHA checkbox verification.');
-        return;
-      }
-      grecaptchaObj.reset(recaptchaWidgetId.current);
-    }
     
     // Construct pre-formatted WhatsApp message
     const formattedMessage = `Hello Comtech Systems,\n\nI have a new website quote request:\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Phone:* ${formData.phone}\n*Service:* ${formData.service}\n*Details:* ${formData.message}`;
@@ -211,10 +161,6 @@ export default function QuoteModal() {
                 className="form-textarea" 
                 placeholder="Describe your requirements..."
               />
-            </div>
-
-            <div style={{ marginBottom: '20px', display: 'flex', justifyContent: 'center' }}>
-              <div id="recaptcha-quote-modal"></div>
             </div>
  
             <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>

@@ -25,43 +25,6 @@ const initialForm: FormState = {
 export default function Contact() {
   const [form, setForm] = useState<FormState>(initialForm);
   const [submitted, setSubmitted] = useState(false);
-  const recaptchaWidgetId = useRef<number | null>(null);
-
-  useEffect(() => {
-    const renderCaptcha = () => {
-      const grecaptchaObj = (window as any).grecaptcha;
-      if (grecaptchaObj && grecaptchaObj.render && recaptchaWidgetId.current === null) {
-        try {
-          recaptchaWidgetId.current = grecaptchaObj.render('recaptcha-contact-page', {
-            sitekey: '6LfyfFUtAAAAALgd8uEBAEaOpLJbickTklk4WhiB',
-          });
-        } catch (error) {
-          console.error("reCAPTCHA contact render error:", error);
-        }
-      }
-    };
-
-    const grecaptchaObj = (window as any).grecaptcha;
-    if (grecaptchaObj) {
-      grecaptchaObj.ready(renderCaptcha);
-    } else {
-      const interval = setInterval(() => {
-        const currentGrecaptcha = (window as any).grecaptcha;
-        if (currentGrecaptcha) {
-          clearInterval(interval);
-          currentGrecaptcha.ready(renderCaptcha);
-        }
-      }, 500);
-      return () => {
-        clearInterval(interval);
-        recaptchaWidgetId.current = null;
-      };
-    }
-
-    return () => {
-      recaptchaWidgetId.current = null;
-    };
-  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -69,17 +32,6 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
-    const grecaptchaObj = (window as any).grecaptcha;
-    if (grecaptchaObj && recaptchaWidgetId.current !== null) {
-      const captchaResponse = grecaptchaObj.getResponse(recaptchaWidgetId.current);
-      if (!captchaResponse) {
-        alert('Please complete the CAPTCHA checkbox verification.');
-        return;
-      }
-      // Reset CAPTCHA after validation success
-      grecaptchaObj.reset(recaptchaWidgetId.current);
-    }
 
     const text = encodeURIComponent(
       `📋 *New Inquiry — Comtech Systems*\n\n` +
@@ -221,11 +173,6 @@ export default function Contact() {
                 <label className="form-label" htmlFor="message">Message *</label>
                 <textarea id="message" name="message" className="form-textarea" rows={4} placeholder="Describe your requirement..." required value={form.message} onChange={handleChange} />
               </div>
-
-              <div style={{ marginBottom: '20px', display: 'flex', justifyContent: 'center' }}>
-                <div id="recaptcha-contact-page"></div>
-              </div>
-
               <button type="submit" className="btn btn-primary" style={{ width: '100%', gap: '8px' }}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
