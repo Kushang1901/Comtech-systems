@@ -73,9 +73,14 @@ a {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: rgba(255, 255, 255, 0.92);
+  background-color: rgba(248, 250, 252, 0.92);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
+}
+
+.header.header--hidden {
+  transform: translateY(-100%);
 }
 
 .nav-container {

@@ -3,13 +3,38 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useQuoteModal } from '@/context/QuoteModalContext';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 export default function Navbar() {
   const pathname = usePathname();
   const { openModal } = useQuoteModal();
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isOpen) {
+        setIsVisible(true);
+        return;
+      }
+
+      const currentScrollY = window.scrollY;
+
+      // Only hide if we scroll down and are past 100px
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isOpen]);
 
   const navItems = [
     { name: 'Home', path: '/' },
@@ -27,7 +52,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="header">
+    <header className={`header ${!isVisible ? 'header--hidden' : ''}`}>
       <div className="container nav-container">
         <Link href="/" style={{ display: 'flex', alignItems: 'center' }} onClick={closeDrawer}>
           <Image
