@@ -135,7 +135,7 @@ export default function RootLayout({
           <FloatingWidgets />
         </QuoteModalProvider>
         <Script
-          src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_V3_SITE_KEY || '6Ld2fFUtAAAAALuUdAnhhkpySAQf3EjDL3GV1Xb5'}`}
+          src="https://www.google.com/recaptcha/api.js?render=6Ld2fFUtAAAAALuUdAnhhkpySAQf3EjDL3GV1Xb5"
           strategy="afterInteractive"
         />
       </body>
