@@ -33,7 +33,7 @@ export default function Contact() {
       if (grecaptchaObj && grecaptchaObj.render && recaptchaWidgetId.current === null) {
         try {
           recaptchaWidgetId.current = grecaptchaObj.render('recaptcha-contact-page', {
-            sitekey: process.env.NEXT_PUBLIC_RECAPTCHA_V2_SITE_KEY,
+            sitekey: process.env.NEXT_PUBLIC_RECAPTCHA_V2_SITE_KEY || '6LfyfFUtAAAAALgd8uEBAEaOpLJbickTklk4WhiB',
           });
         } catch (error) {
           console.error("reCAPTCHA contact render error:", error);
