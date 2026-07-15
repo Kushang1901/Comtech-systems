@@ -23,7 +23,7 @@ export default function Home() {
 
           {/* Decorative SVG */}
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-            <svg width="100%" height="330" viewBox="0 0 380 280" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ maxWidth: '450px' }}>
+            <svg width="100%" height="380" viewBox="0 0 380 280" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ maxWidth: '520px' }}>
               <rect x="16" y="30" width="348" height="200" rx="14" fill="#f8fafc" stroke="#e2e8f0" strokeWidth="1.5" />
               <rect x="36" y="50" width="308" height="140" rx="8" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1" />
               <line x1="174" y1="230" x2="206" y2="230" stroke="#cbd5e1" strokeWidth="4" strokeLinecap="round" />
