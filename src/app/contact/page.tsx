@@ -33,7 +33,7 @@ export default function Contact() {
       if (turnstileObj && turnstileObj.render && turnstileWidgetId.current === null) {
         try {
           turnstileWidgetId.current = turnstileObj.render('#turnstile-contact-page', {
-            sitekey: '0x4AAAAAAAD2n168FH0cnjToJ',
+            sitekey: '0x4AAAAAAD2n168FH0cnjToJ',
             theme: 'light',
           });
         } catch (error) {
