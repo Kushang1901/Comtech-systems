@@ -36,6 +36,37 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isOpen]);
 
+  useEffect(() => {
+    const renderV3 = () => {
+      const grecaptchaObj = (window as any).grecaptcha;
+      if (grecaptchaObj && grecaptchaObj.render) {
+        try {
+          grecaptchaObj.render('recaptcha-v3-global', {
+            sitekey: '6Ld2fFUtAAAAALuUdAnhhkpySAQf3EjDL3GV1Xb5',
+            size: 'invisible',
+            badge: 'bottomright'
+          });
+        } catch (e) {
+          // Ignore render errors (e.g. if already rendered)
+        }
+      }
+    };
+
+    const grecaptchaObj = (window as any).grecaptcha;
+    if (grecaptchaObj) {
+      grecaptchaObj.ready(renderV3);
+    } else {
+      const interval = setInterval(() => {
+        const currentGrecaptcha = (window as any).grecaptcha;
+        if (currentGrecaptcha) {
+          clearInterval(interval);
+          currentGrecaptcha.ready(renderV3);
+        }
+      }, 500);
+      return () => clearInterval(interval);
+    }
+  }, []);
+
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
@@ -155,6 +186,8 @@ export default function Navbar() {
           </button>
         </div>
       </div>
+      {/* Container for explicit global reCAPTCHA v3 badge */}
+      <div id="recaptcha-v3-global"></div>
     </header>
   );
 }
