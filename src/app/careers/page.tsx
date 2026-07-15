@@ -166,11 +166,13 @@ export default function Careers() {
                   </ul>
 
                   <a 
-                    href={`mailto:sbsharma@comtech-systems.in?subject=Application for ${encodeURIComponent(job.title)}`}
+                    href={`https://wa.me/919811767644?text=${encodeURIComponent(`Hello Comtech Systems,\n\nI am interested in applying for the position: *${job.title}*.\n\nPlease guide me on how I can share my resume/details.\n\nThank you!`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="btn btn-primary"
                     style={{ fontSize: '14px', padding: '10px 20px' }}
                   >
-                    Apply for this position
+                    Apply via WhatsApp
                   </a>
                 </div>
               </div>
@@ -210,10 +212,12 @@ export default function Careers() {
               <strong style={{ fontSize: '16px' }}>sbsharma@comtech-systems.in</strong>
             </div>
             <a 
-              href="mailto:sbsharma@comtech-systems.in?subject=General Career Inquiry - Comtech Systems" 
+              href={`https://wa.me/919811767644?text=${encodeURIComponent("Hello Comtech Systems,\n\nI am interested in career opportunities at your Gurgaon/Noida office.\n\nPlease guide me on how I can submit my profile and resume.\n\nThank you!")}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn btn-primary"
             >
-              Email Resume & Cover Letter
+              Apply via WhatsApp
             </a>
           </div>
         </div>

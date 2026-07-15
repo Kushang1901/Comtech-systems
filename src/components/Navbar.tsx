@@ -48,7 +48,9 @@ export default function Navbar() {
 
   const handleQuoteClick = () => {
     closeDrawer();
-    openModal();
+    setTimeout(() => {
+      openModal();
+    }, 150);
   };
 
   return (

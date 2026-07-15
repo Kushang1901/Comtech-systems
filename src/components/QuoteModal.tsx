@@ -13,10 +13,61 @@ export default function QuoteModal() {
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
+  const turnstileWidgetId = useRef<string | null>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const renderTurnstile = () => {
+      const turnstileObj = (window as any).turnstile;
+      if (turnstileObj && turnstileObj.render && turnstileWidgetId.current === null) {
+        try {
+          turnstileWidgetId.current = turnstileObj.render('#turnstile-quote-modal', {
+            sitekey: '0x4AAAAAAAD2n168FH0cnjToJ',
+            theme: 'light',
+          });
+        } catch (error) {
+          console.error("Turnstile modal render error:", error);
+        }
+      }
+    };
+
+    const turnstileObj = (window as any).turnstile;
+    if (turnstileObj) {
+      renderTurnstile();
+    } else {
+      const interval = setInterval(() => {
+        const currentTurnstile = (window as any).turnstile;
+        if (currentTurnstile) {
+          clearInterval(interval);
+          renderTurnstile();
+        }
+      }, 500);
+      return () => {
+        clearInterval(interval);
+        turnstileWidgetId.current = null;
+      };
+    }
+
+    return () => {
+      turnstileWidgetId.current = null;
+    };
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    const turnstileObj = (window as any).turnstile;
+    if (turnstileObj && turnstileWidgetId.current !== null) {
+      const turnstileResponse = turnstileObj.getResponse(turnstileWidgetId.current);
+      if (!turnstileResponse) {
+        alert('Please complete the Cloudflare Turnstile security verification.');
+        return;
+      }
+      turnstileObj.reset(turnstileWidgetId.current);
+    }
     
     // Construct pre-formatted WhatsApp message
     const formattedMessage = `Hello Comtech Systems,\n\nI have a new website quote request:\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Phone:* ${formData.phone}\n*Service:* ${formData.service}\n*Details:* ${formData.message}`;
@@ -162,7 +213,10 @@ export default function QuoteModal() {
                 placeholder="Describe your requirements..."
               />
             </div>
- 
+            <div style={{ marginBottom: '20px', display: 'flex', justifyContent: 'center' }}>
+              <div id="turnstile-quote-modal"></div>
+            </div>
+
             <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>
               Submit Inquiry
             </button>

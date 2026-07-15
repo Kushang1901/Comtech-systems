@@ -138,6 +138,10 @@ export default function RootLayout({
           src="https://www.google.com/recaptcha/api.js?render=6Ld2fFUtAAAAALuUdAnhhkpySAQf3EjDL3GV1Xb5"
           strategy="afterInteractive"
         />
+        <Script
+          src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
