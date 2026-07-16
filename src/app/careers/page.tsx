@@ -2,8 +2,33 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Careers',
-  description: 'Join the Comtech Systems team in Gurgaon and Noida. Explore career opportunities including Internships, Sales & Marketing, and Executive Assistant positions.',
+  title: 'Careers | Job Opportunities in Gurgaon & Noida Extension',
+  description: 'Join the Comtech Systems team in Gurgaon and Noida. Explore career opportunities including IT/Operations Internships, Sales & Marketing Executive, and Executive Assistant positions.',
+  keywords: [
+    'Comtech Systems Careers',
+    'Jobs in Gurgaon Sector 17A',
+    'IT internships Gurgaon',
+    'Sales executive jobs Noida',
+    'Executive Assistant vacancies NCR',
+    'Printer servicing jobs Delhi',
+    'Apply Comtech Systems WhatsApp'
+  ],
+  alternates: {
+    canonical: '/careers',
+  },
+  openGraph: {
+    title: 'Careers at Comtech Systems | Join Our Team',
+    description: 'Grow your career with Comtech Systems. Open positions in computer hardware, marketing, office administration, and sustainable recycling systems.',
+    url: 'https://www.comtech-systems.in/careers',
+    images: [
+      {
+        url: '/logo.png',
+        width: 800,
+        height: 800,
+        alt: 'Comtech Systems Logo',
+      },
+    ],
+  },
 };
 
 export default function Careers() {

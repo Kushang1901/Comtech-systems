@@ -9,7 +9,7 @@ import FloatingWidgets from "@/components/FloatingWidgets";
 import Preloader from "@/components/Preloader";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://comtechsystems.in'),
+  metadataBase: new URL('https://www.comtech-systems.in'),
   title: {
     default: "Comtech Systems | Laptop & Printer Repair, Printing & Corporate Gifting",
     template: "%s | Comtech Systems",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Comtech Systems | IT Solutions & Commercial Printing",
     description: "Gurgaon and Noida Extension's trusted partner for computer repair, printer cartridge refilling, corporate gifting, and empty toner cartridge recycling buyback.",
-    url: "https://comtechsystems.in",
+    url: "https://www.comtech-systems.in",
     siteName: "Comtech Systems",
     images: [
       {
@@ -48,9 +48,22 @@ export const metadata: Metadata = {
     locale: "en_IN",
     type: "website",
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Comtech Systems | IT Solutions & Commercial Printing',
+    description: 'Trusted partner for computer repair, printer cartridge refilling, corporate gifting, and empty toner cartridge recycling buyback.',
+    images: ['/sales&repair.png'],
+  },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
@@ -79,8 +92,8 @@ export default function RootLayout({
               "priceRange": "$$",
               "address": [
                 {
-                  "@type": "PostalAd  dress",
-                  "streetAddress": " Sector 17A",
+                  "@type": "PostalAddress",
+                  "streetAddress": "Sukhrali Road, Sector 17A",
                   "addressLocality": "Gurgaon",
                   "addressRegion": "Haryana",
                   "postalCode": "122001",

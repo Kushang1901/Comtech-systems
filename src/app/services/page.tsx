@@ -1,7 +1,37 @@
-'use client';
-
+import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+
+export const metadata: Metadata = {
+  title: 'Our Services | Laptop Repair, Printer Refill, Printing & Gifting',
+  description: 'Explore the complete list of services from Comtech Systems in Gurgaon & Noida. We offer laptop repairs, printer cartridge refilling, commercial printing (visiting cards, letterheads), corporate gifts, and empty toner buyback.',
+  keywords: [
+    'Laptop repair Gurgaon',
+    'Printer cartridge refilling Noida',
+    'Laser printer repairs Delhi NCR',
+    'Visiting card printing Gurgaon',
+    'Letterhead printing Noida Extn',
+    'Corporate gifts buyback',
+    'Toner cartridge recycling price',
+    'Printer repair AMC'
+  ],
+  alternates: {
+    canonical: '/services',
+  },
+  openGraph: {
+    title: 'Comtech Systems Services | IT Repair, Commercial Printing & Gifting',
+    description: 'Comprehensive tech support, custom branding print work, and eco-friendly cartridge recycling services for individuals and corporate clients.',
+    url: 'https://www.comtech-systems.in/services',
+    images: [
+      {
+        url: '/printers&cartridges.png',
+        width: 1200,
+        height: 630,
+        alt: 'Comtech Systems Services',
+      },
+    ],
+  },
+};
 
 const services = [
   {
@@ -98,6 +128,60 @@ const services = [
 export default function Services() {
   return (
     <div className="animated">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "IT & Printing Services",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "Comtech Systems",
+              "@id": "https://www.comtech-systems.in/#localbusiness",
+              "url": "https://www.comtech-systems.in"
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Comtech Systems Services Catalog",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Computer & Laptop Sales & Repair",
+                    "description": "Component-level repair & replacement, OS reinstallation, performance tuning, and data backup/recovery for desktops and laptops."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Printer Servicing & Cartridge Refilling",
+                    "description": "Inkjet & laser printer repair, cartridge refilling, and bulk toner cartridge buy-back recycling program."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Commercial Printing",
+                    "description": "Bespoke visiting cards, letterheads, brochures, flyers, and other corporate stationery printing."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Corporate Gifting",
+                    "description": "Customized corporate gifts, branded tech accessories, and personalized executive hampers."
+                  }
+                }
+              ]
+            }
+          })
+        }}
+      />
       {/* Page Header */}
       <section className="section section-bg" style={{ borderBottom: '1px solid var(--border-color)', padding: '56px 0', textAlign: 'center' }}>
         <div className="container">

@@ -1,8 +1,61 @@
+import { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'About Us',
+  description: 'Learn about Comtech Systems, managed by Shashi Bhushan Sharma. We offer reliable IT support, laptop & computer repair, printer cartridge refilling, printing, and eco-friendly cartridge recycling in Gurgaon and Noida.',
+  keywords: [
+    'About Comtech Systems',
+    'Shashi Bhushan Sharma',
+    'IT services Gurgaon history',
+    'Noida printer services background',
+    'Toner cartridge recycling program management'
+  ],
+  alternates: {
+    canonical: '/about',
+  },
+  openGraph: {
+    title: 'About Comtech Systems | Leadership & Core Values',
+    description: 'Managed by Shashi Bhushan Sharma, Comtech Systems has grown from a local service provider to a multi-faceted enterprise serving Delhi NCR.',
+    url: 'https://www.comtech-systems.in/about',
+    images: [
+      {
+        url: '/logo.png',
+        width: 800,
+        height: 800,
+        alt: 'Comtech Systems Logo',
+      },
+    ],
+  },
+};
 
 export default function About() {
   return (
     <div className="animated">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Comtech Systems",
+            "url": "https://www.comtech-systems.in",
+            "logo": "https://www.comtech-systems.in/logo.png",
+            "founder": {
+              "@type": "Person",
+              "name": "Shashi Bhushan Sharma",
+              "jobTitle": "Founder & CEO"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+919811767644",
+              "contactType": "customer service",
+              "areaServed": "IN",
+              "availableLanguage": ["en", "hi"]
+            }
+          })
+        }}
+      />
 
       {/* ── PAGE HEADER ── */}
       <section className="section section-bg" style={{ borderBottom: '1px solid var(--border-color)', padding: '56px 0', textAlign: 'center' }}>
