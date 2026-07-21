@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.comtech-systems.in';
-  const lastModified = '2026-07-16'; // Stable indexing timestamp for pages
+  const lastModified = new Date(); // Dynamic — always fresh for Google
 
   return [
     {
