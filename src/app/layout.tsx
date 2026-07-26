@@ -314,6 +314,12 @@ export default function RootLayout({
           src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
           strategy="afterInteractive"
         />
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9564494037866343"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
