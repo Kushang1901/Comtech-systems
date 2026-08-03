@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     'Apply Comtech Systems WhatsApp'
   ],
   alternates: {
-    canonical: '/careers',
+    canonical: 'https://www.comtech-systems.in/careers',
   },
   openGraph: {
     title: 'Careers at Comtech Systems | Join Our Team',
@@ -22,10 +22,10 @@ export const metadata: Metadata = {
     url: 'https://www.comtech-systems.in/careers',
     images: [
       {
-        url: '/logo.png',
-        width: 800,
-        height: 800,
-        alt: 'Comtech Systems Logo',
+        url: 'https://www.comtech-systems.in/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Careers at Comtech Systems — Gurgaon & Noida',
       },
     ],
   },
@@ -100,6 +100,152 @@ export default function Careers() {
 
   return (
     <div className="animated">
+      {/* ── BreadcrumbList JSON-LD ── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Comtech Systems",
+                "item": "https://www.comtech-systems.in"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Careers",
+                "item": "https://www.comtech-systems.in/careers"
+              }
+            ]
+          })
+        }}
+      />
+
+      {/* ── JobPosting Schema ── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "JobPosting",
+              "title": "Internship — IT, Operations & Printing",
+              "description": "Gain hands-on industry experience by assisting our technical and operational teams in Gurgaon and Noida.",
+              "datePosted": "2025-08-01",
+              "validThrough": "2025-12-31T23:59:59",
+              "employmentType": "INTERN",
+              "hiringOrganization": {
+                "@type": "Organization",
+                "name": "Comtech Systems",
+                "sameAs": "https://www.comtech-systems.in",
+                "logo": "https://www.comtech-systems.in/logo.png"
+              },
+              "jobLocation": [
+                {
+                  "@type": "Place",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Sukhrali Road, Sector 17A",
+                    "addressLocality": "Gurgaon",
+                    "addressRegion": "Haryana",
+                    "postalCode": "122001",
+                    "addressCountry": "IN"
+                  }
+                }
+              ],
+              "baseSalary": {
+                "@type": "MonetaryAmount",
+                "currency": "INR",
+                "value": {
+                  "@type": "QuantitativeValue",
+                  "value": 0,
+                  "unitText": "MONTH"
+                }
+              }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "JobPosting",
+              "title": "Sales & Marketing Executive",
+              "description": "Drive growth and expand client relationships for computer sales, hardware repair, print media, and corporate gifting services across Delhi NCR.",
+              "datePosted": "2025-08-01",
+              "validThrough": "2025-12-31T23:59:59",
+              "employmentType": "FULL_TIME",
+              "hiringOrganization": {
+                "@type": "Organization",
+                "name": "Comtech Systems",
+                "sameAs": "https://www.comtech-systems.in",
+                "logo": "https://www.comtech-systems.in/logo.png"
+              },
+              "jobLocation": [
+                {
+                  "@type": "Place",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Sukhrali Road, Sector 17A",
+                    "addressLocality": "Gurgaon",
+                    "addressRegion": "Haryana",
+                    "postalCode": "122001",
+                    "addressCountry": "IN"
+                  }
+                }
+              ],
+              "baseSalary": {
+                "@type": "MonetaryAmount",
+                "currency": "INR",
+                "value": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 25000,
+                  "maxValue": 45000,
+                  "unitText": "MONTH"
+                }
+              }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "JobPosting",
+              "title": "Executive Assistant",
+              "description": "Support leadership with daily administrative tasks, client correspondence, invoice tracking, and operations management.",
+              "datePosted": "2025-08-01",
+              "validThrough": "2025-12-31T23:59:59",
+              "employmentType": "FULL_TIME",
+              "hiringOrganization": {
+                "@type": "Organization",
+                "name": "Comtech Systems",
+                "sameAs": "https://www.comtech-systems.in",
+                "logo": "https://www.comtech-systems.in/logo.png"
+              },
+              "jobLocation": [
+                {
+                  "@type": "Place",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Sukhrali Road, Sector 17A",
+                    "addressLocality": "Gurgaon",
+                    "addressRegion": "Haryana",
+                    "postalCode": "122001",
+                    "addressCountry": "IN"
+                  }
+                }
+              ],
+              "baseSalary": {
+                "@type": "MonetaryAmount",
+                "currency": "INR",
+                "value": {
+                  "@type": "QuantitativeValue",
+                  "minValue": 25000,
+                  "maxValue": 45000,
+                  "unitText": "MONTH"
+                }
+              }
+            }
+          ])
+        }}
+      />
       {/* ── PAGE HEADER ── */}
       <section className="section section-bg" style={{ borderBottom: '1px solid var(--border-color)', padding: '56px 0', textAlign: 'center' }}>
         <div className="container">

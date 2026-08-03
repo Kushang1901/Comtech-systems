@@ -135,72 +135,85 @@ const services = [
 export default function Services() {
   return (
     <div className="animated">
-      {/* ── Services JSON-LD ── */}
+      {/* ── Services ItemList JSON-LD ── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Service",
-            "serviceType": "IT & Printing Services",
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": "Comtech Systems",
-              "@id": "https://www.comtech-systems.in/#localbusiness",
-              "url": "https://www.comtech-systems.in",
-              "telephone": "+919811767644",
-              "areaServed": [
-                { "@type": "City", "name": "Gurgaon" },
-                { "@type": "City", "name": "Noida" },
-                { "@type": "AdministrativeArea", "name": "Delhi NCR" }
-              ],
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Sukhrali Road, Sector 17A",
-                "addressLocality": "Gurgaon",
-                "addressRegion": "Haryana",
-                "postalCode": "122001",
-                "addressCountry": "IN"
-              }
-            },
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "Comtech Systems Services Catalog",
-              "itemListElement": [
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Computer & Laptop Sales & Repair in Gurgaon & Noida",
-                    "description": "Component-level repair & replacement, OS reinstallation, performance tuning, and data backup/recovery for desktops and laptops in Gurgaon and Noida."
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Printer Servicing & Cartridge Refilling Gurgaon Noida",
-                    "description": "Inkjet & laser printer repair, cartridge refilling, and bulk toner cartridge buy-back recycling program in Gurgaon and Noida."
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Commercial Printing — Visiting Cards & Letterheads Gurgaon",
-                    "description": "Bespoke visiting cards, letterheads, brochures, flyers, and other corporate stationery printing in Gurgaon and Noida."
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Corporate Gifting Delhi NCR",
-                    "description": "Customized corporate gifts, branded tech accessories, and personalized executive hampers for businesses in Delhi NCR."
-                  }
+            "@type": "ItemList",
+            "name": "Comtech Systems Services",
+            "description": "Complete list of IT repair, printing, and corporate gifting services offered by Comtech Systems in Gurgaon and Noida.",
+            "url": "https://www.comtech-systems.in/services",
+            "numberOfItems": 4,
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                  "@type": "Service",
+                  "name": "Computer & Laptop Sales & Repair in Gurgaon & Noida",
+                  "url": "https://www.comtech-systems.in/services#computers",
+                  "description": "Component-level repair & replacement, OS reinstallation, performance tuning, and data backup/recovery for desktops and laptops in Gurgaon and Noida.",
+                  "serviceType": "Computer Repair",
+                  "areaServed": [
+                    { "@type": "City", "name": "Gurgaon" },
+                    { "@type": "City", "name": "Noida" }
+                  ],
+                  "provider": { "@id": "https://www.comtech-systems.in/#localbusiness" }
                 }
-              ]
-            }
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                  "@type": "Service",
+                  "name": "Printer Servicing & Cartridge Refilling Gurgaon Noida",
+                  "url": "https://www.comtech-systems.in/services#printers",
+                  "description": "Inkjet & laser printer repair, cartridge refilling, and bulk toner cartridge buy-back recycling program in Gurgaon and Noida.",
+                  "serviceType": "Printer Repair & Cartridge Refilling",
+                  "areaServed": [
+                    { "@type": "City", "name": "Gurgaon" },
+                    { "@type": "City", "name": "Noida" }
+                  ],
+                  "provider": { "@id": "https://www.comtech-systems.in/#localbusiness" }
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                  "@type": "Service",
+                  "name": "Commercial Printing — Visiting Cards & Letterheads Gurgaon",
+                  "url": "https://www.comtech-systems.in/services#printing",
+                  "description": "Bespoke visiting cards, letterheads, brochures, flyers, and other corporate stationery printing in Gurgaon and Noida.",
+                  "serviceType": "Commercial Printing",
+                  "areaServed": [
+                    { "@type": "City", "name": "Gurgaon" },
+                    { "@type": "City", "name": "Noida" },
+                    { "@type": "AdministrativeArea", "name": "Delhi NCR" }
+                  ],
+                  "provider": { "@id": "https://www.comtech-systems.in/#localbusiness" }
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "item": {
+                  "@type": "Service",
+                  "name": "Corporate Gifting Delhi NCR",
+                  "url": "https://www.comtech-systems.in/services#gifting",
+                  "description": "Customized corporate gifts, branded tech accessories, and personalized executive hampers for businesses in Delhi NCR.",
+                  "serviceType": "Corporate Gifting",
+                  "areaServed": [
+                    { "@type": "AdministrativeArea", "name": "Delhi NCR" },
+                    { "@type": "City", "name": "Gurgaon" },
+                    { "@type": "City", "name": "Noida" }
+                  ],
+                  "provider": { "@id": "https://www.comtech-systems.in/#localbusiness" }
+                }
+              }
+            ]
           })
         }}
       />
@@ -285,6 +298,7 @@ export default function Services() {
             return (
               <div
                 key={service.id}
+                id={service.id}
                 className={`service-row${isReverse ? ' reverse' : ''}`}
                 style={{
                   borderBottom: index < services.length - 1 ? '1px solid var(--border-color)' : 'none',

@@ -61,9 +61,14 @@ export const metadata: Metadata = {
     canonical: 'https://www.comtech-systems.in',
   },
   icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
+    icon: [
+      { url: '/favicon.ico', sizes: '48x48', type: 'image/x-icon' },
+      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
   },
   openGraph: {
     title: "Comtech Systems | IT Repair, Printing & Corporate Gifting — Gurgaon & Noida",
@@ -108,6 +113,16 @@ export default function RootLayout({
   return (
     <html lang="en-IN">
       <head>
+        {/* ── Geo & Hreflang for Local SEO ── */}
+        <meta name="geo.region" content="IN-HR" />
+        <meta name="geo.placename" content="Gurgaon, Haryana, India" />
+        <meta name="geo.position" content="28.4548;77.0154" />
+        <meta name="ICBM" content="28.4548, 77.0154" />
+        <link rel="alternate" hrefLang="en-IN" href="https://www.comtech-systems.in" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.comtech-systems.in" />
+        {/* ── Theme Color (Chrome Android address bar) ── */}
+        <meta name="theme-color" content="#3b4cb4" />
+        {/* ── Fonts ── */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -118,7 +133,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "LocalBusiness",
+              "@type": ["LocalBusiness", "ComputerRepairService"],
               "@id": "https://www.comtech-systems.in/#localbusiness",
               "name": "Comtech Systems",
               "legalName": "Comtech Systems",

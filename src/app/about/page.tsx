@@ -23,10 +23,10 @@ export const metadata: Metadata = {
     url: 'https://www.comtech-systems.in/about',
     images: [
       {
-        url: '/logo.png',
-        width: 800,
-        height: 800,
-        alt: 'Comtech Systems Logo',
+        url: 'https://www.comtech-systems.in/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'About Comtech Systems — IT Repair & Printing in Gurgaon & Noida',
       },
     ],
   },
