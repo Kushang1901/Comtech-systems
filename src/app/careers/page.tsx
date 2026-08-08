@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { Check } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Careers | Job Opportunities in Gurgaon & Noida Extension',
@@ -329,8 +330,8 @@ export default function Careers() {
                   </h4>
                   <ul style={{ listStyleType: 'none', paddingLeft: 0, display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '24px' }}>
                     {job.requirements.map((req, rIdx) => (
-                      <li key={rIdx} style={{ display: 'flex', gap: '10px', fontSize: '14px', color: 'var(--text-secondary)' }}>
-                        <span style={{ color: 'var(--accent-color)', fontWeight: 'bold' }}>✓</span>
+                      <li key={rIdx} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', fontSize: '14px', color: 'var(--text-secondary)' }}>
+                        <Check size={14} style={{ color: 'var(--accent-color)', marginTop: '4px', flexShrink: 0 }} strokeWidth={3} />
                         <span>{req}</span>
                       </li>
                     ))}

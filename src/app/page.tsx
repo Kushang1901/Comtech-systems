@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { MapPin, Check } from 'lucide-react';
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: 'https://www.comtech-systems.in',
+    canonical: 'https://comtech-systems.in',
   },
 };
 
@@ -200,8 +201,8 @@ export default function Home() {
                 { title: 'Eco-Conscious Recycling', desc: 'Environmentally secure hardware disposal and printer cartridge buy-back programs across Delhi NCR.' },
                 { title: 'Dual-Branch Support', desc: 'Prompt corporate onsite services spanning Gurgaon (Sector 17A) and Noida Extension (Sector 1).' },
               ].map((point) => (
-                <div key={point.title} style={{ display: 'flex', gap: '12px' }}>
-                  <div style={{ color: 'var(--accent-color)', fontWeight: 'bold', marginTop: '2px', flexShrink: 0 }}>✓</div>
+                <div key={point.title} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                  <Check size={16} style={{ color: 'var(--accent-color)', marginTop: '4px', flexShrink: 0 }} strokeWidth={3} />
                   <div>
                     <h4 style={{ fontWeight: 700, fontSize: '15px', marginBottom: '3px' }}>{point.title}</h4>
                     <p style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>{point.desc}</p>
@@ -240,7 +241,9 @@ export default function Home() {
               'DLF Phase Gurgaon', 'Sohna Road', 'Golf Course Road', 'MG Road Gurgaon',
             ].map((city) => (
               <span key={city} style={{
-                display: 'inline-block',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
                 background: '#fff',
                 border: '1px solid var(--border-color)',
                 borderRadius: '50px',
@@ -249,7 +252,8 @@ export default function Home() {
                 fontWeight: 500,
                 color: 'var(--text-secondary)',
               }}>
-                📍 {city}
+                <MapPin size={14} className="text-rose-500" />
+                {city}
               </span>
             ))}
           </div>

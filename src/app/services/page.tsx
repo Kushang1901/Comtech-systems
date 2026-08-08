@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Check } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Services | Laptop Repair Gurgaon, Printer Refill, Commercial Printing & Corporate Gifting',
@@ -359,7 +360,7 @@ export default function Services() {
                   <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px' }}>
                     {(service.points ?? []).map((point) => (
                       <li key={point} style={{ display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
-                        <span style={{ color: 'var(--accent-color)', fontWeight: 700, flexShrink: 0, marginTop: '2px' }}>✓</span>
+                        <Check size={14} style={{ color: 'var(--accent-color)', marginTop: '4px', flexShrink: 0 }} strokeWidth={3} />
                         <span style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>{point}</span>
                       </li>
                     ))}
