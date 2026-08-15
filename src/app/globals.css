@@ -81,6 +81,7 @@ a {
   width: 100%;
   z-index: 100;
   background-color: rgba(248, 250, 252, 0.92);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
@@ -192,6 +193,7 @@ a {
   position: fixed;
   inset: 0;
   background-color: rgba(15, 23, 42, 0.45);
+  -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
   z-index: 998;
   animation: fadeIn 0.2s ease-out;
@@ -290,8 +292,8 @@ a {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1.5fr;
-  gap: 40px;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+  gap: 30px;
   margin-bottom: 40px;
 }
 
@@ -667,6 +669,7 @@ a {
   position: fixed;
   inset: 0;
   background-color: rgba(15, 23, 42, 0.45);
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   display: flex;
   justify-content: center;
