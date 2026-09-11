@@ -137,18 +137,27 @@ export default function Home() {
             {[
               {
                 icon: <><rect x="2" y="3" width="20" height="14" rx="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" /></>,
-                title: 'IT & Hardware Services',
-                desc: 'Expert repair, optimization, and sales of high-performance laptops and computers in Gurgaon & Noida.',
+                title: 'Computers & Laptops',
+                desc: 'Expert chip-level repair, hardware optimization, screen replacement, and sales of workstations in Gurgaon & Noida.',
+                link: '/services/computers-and-laptops',
               },
               {
                 icon: <><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" /><rect x="6" y="14" width="12" height="8" /><path d="M6 8V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v4" /></>,
-                title: 'Printers & Recycling',
-                desc: 'Printer repairs, cartridge refilling, and toner buy-back for eco-friendly recycling across Delhi NCR.',
+                title: 'Printers & Cartridges',
+                desc: 'Printer repairs, precision toner refilling, AMC contracts, and empty toner cartridge buyback recycling across Delhi NCR.',
+                link: '/services/printers-and-cartridges',
               },
               {
-                icon: <><rect x="2" y="7" width="20" height="14" rx="2" /><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /></>,
-                title: 'Corporate Gifting & Printing',
-                desc: 'Custom letterheads, professional visiting cards, and executive corporate gifts for businesses in Delhi NCR.',
+                icon: <><polyline points="14 2 14 8 20 8" /><path d="M20 12V22H4V2h10l6 6z" /></>,
+                title: 'Commercial Printing',
+                desc: 'Bespoke executive visiting cards, bond letterheads, promotional brochures, and official corporate stationery.',
+                link: '/services/commercial-printing',
+              },
+              {
+                icon: <><polyline points="20 12 20 22 4 22 4 12" /><rect x="2" y="7" width="20" height="5" /><line x1="12" y1="22" x2="12" y2="7" /><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z" /><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" /></>,
+                title: 'Corporate Gifting',
+                desc: 'Tailored new hire welcome kits, laser-engraved tech gadgets, luxury gift sets, and festive hampers across Delhi NCR.',
+                link: '/services/corporate-gifting',
               },
             ].map((item) => (
               <div className="card" key={item.title}>
@@ -159,8 +168,8 @@ export default function Home() {
                 </div>
                 <h3>{item.title}</h3>
                 <p style={{ marginBottom: '14px' }}>{item.desc}</p>
-                <Link href="/services" style={{ fontSize: '13px', fontWeight: 600, color: 'var(--accent-color)' }}>
-                  Learn more &rarr;
+                <Link href={item.link} style={{ fontSize: '13px', fontWeight: 600, color: 'var(--accent-color)' }}>
+                  View details &rarr;
                 </Link>
               </div>
             ))}

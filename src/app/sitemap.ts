@@ -1,8 +1,16 @@
 import { MetadataRoute } from 'next';
 import { blogPosts } from './blog/posts';
+import { servicesData } from '@/data/servicesData';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.comtech-systems.in';
+
+  const dynamicServices = servicesData.map((service) => ({
+    url: `${baseUrl}/services/${service.slug}`,
+    lastModified: new Date('2026-08-15'),
+    changeFrequency: 'weekly' as const,
+    priority: 0.85,
+  }));
 
   const dynamicPosts = blogPosts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
@@ -68,5 +76,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  return [...staticPages, ...dynamicPosts];
+  return [...staticPages, ...dynamicServices, ...dynamicPosts];
 }

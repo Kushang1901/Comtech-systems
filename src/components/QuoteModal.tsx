@@ -3,6 +3,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useQuoteModal } from '@/context/QuoteModalContext';
 
+interface TurnstileInstance {
+  render: (container: string | HTMLElement, options: Record<string, unknown>) => string;
+  getResponse: (widgetId?: string) => string;
+  reset: (widgetId?: string) => void;
+}
+
+interface TurnstileWindow {
+  turnstile?: TurnstileInstance;
+}
+
 export default function QuoteModal() {
   const { isOpen, closeModal } = useQuoteModal();
   const [formData, setFormData] = useState({
@@ -19,7 +29,7 @@ export default function QuoteModal() {
     if (!isOpen) return;
 
     const renderTurnstile = () => {
-      const turnstileObj = (window as any).turnstile;
+      const turnstileObj = (window as unknown as TurnstileWindow).turnstile;
       if (turnstileObj && turnstileObj.render && turnstileWidgetId.current === null) {
         try {
           turnstileWidgetId.current = turnstileObj.render('#turnstile-quote-modal', {
@@ -32,12 +42,12 @@ export default function QuoteModal() {
       }
     };
 
-    const turnstileObj = (window as any).turnstile;
+    const turnstileObj = (window as unknown as TurnstileWindow).turnstile;
     if (turnstileObj) {
       renderTurnstile();
     } else {
       const interval = setInterval(() => {
-        const currentTurnstile = (window as any).turnstile;
+        const currentTurnstile = (window as unknown as TurnstileWindow).turnstile;
         if (currentTurnstile) {
           clearInterval(interval);
           renderTurnstile();
@@ -59,7 +69,7 @@ export default function QuoteModal() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const turnstileObj = (window as any).turnstile;
+    const turnstileObj = (window as unknown as TurnstileWindow).turnstile;
     if (turnstileObj && turnstileWidgetId.current !== null) {
       const turnstileResponse = turnstileObj.getResponse(turnstileWidgetId.current);
       if (!turnstileResponse) {

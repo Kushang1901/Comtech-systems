@@ -44,6 +44,7 @@ export const metadata: Metadata = {
 const services = [
   {
     id: 'computers',
+    slug: 'computers-and-laptops',
     title: 'Computers & Laptops — Sales & Repair in Gurgaon & Noida',
     tag: 'Sales & Repair',
     image: '/sales&repair.png',
@@ -66,6 +67,7 @@ const services = [
   },
   {
     id: 'printers',
+    slug: 'printers-and-cartridges',
     title: 'Printers & Cartridges — Repair, Refill & Recycling',
     tag: 'Sales, Repair & Recycling',
     image: '/printers&cartridges.png',
@@ -88,6 +90,7 @@ const services = [
   },
   {
     id: 'printing',
+    slug: 'commercial-printing',
     title: 'Commercial Printing — Visiting Cards, Letterheads & Brochures',
     tag: 'Business Branding',
     image: '/printers&cartridges2.png',
@@ -109,6 +112,7 @@ const services = [
   },
   {
     id: 'gifting',
+    slug: 'corporate-gifting',
     title: 'Corporate Gifting — Customized Gifts for Delhi NCR Businesses',
     tag: 'Premium & Customised',
     image: '/sales&repair2.png',
@@ -154,7 +158,7 @@ export default function Services() {
                 "item": {
                   "@type": "Service",
                   "name": "Computer & Laptop Sales & Repair in Gurgaon & Noida",
-                  "url": "https://www.comtech-systems.in/services#computers",
+                  "url": "https://www.comtech-systems.in/services/computers-and-laptops",
                   "description": "Component-level repair & replacement, OS reinstallation, performance tuning, and data backup/recovery for desktops and laptops in Gurgaon and Noida.",
                   "serviceType": "Computer Repair",
                   "areaServed": [
@@ -170,7 +174,7 @@ export default function Services() {
                 "item": {
                   "@type": "Service",
                   "name": "Printer Servicing & Cartridge Refilling Gurgaon Noida",
-                  "url": "https://www.comtech-systems.in/services#printers",
+                  "url": "https://www.comtech-systems.in/services/printers-and-cartridges",
                   "description": "Inkjet & laser printer repair, cartridge refilling, and bulk toner cartridge buy-back recycling program in Gurgaon and Noida.",
                   "serviceType": "Printer Repair & Cartridge Refilling",
                   "areaServed": [
@@ -186,7 +190,7 @@ export default function Services() {
                 "item": {
                   "@type": "Service",
                   "name": "Commercial Printing — Visiting Cards & Letterheads Gurgaon",
-                  "url": "https://www.comtech-systems.in/services#printing",
+                  "url": "https://www.comtech-systems.in/services/commercial-printing",
                   "description": "Bespoke visiting cards, letterheads, brochures, flyers, and other corporate stationery printing in Gurgaon and Noida.",
                   "serviceType": "Commercial Printing",
                   "areaServed": [
@@ -203,7 +207,7 @@ export default function Services() {
                 "item": {
                   "@type": "Service",
                   "name": "Corporate Gifting Delhi NCR",
-                  "url": "https://www.comtech-systems.in/services#gifting",
+                  "url": "https://www.comtech-systems.in/services/corporate-gifting",
                   "description": "Customized corporate gifts, branded tech accessories, and personalized executive hampers for businesses in Delhi NCR.",
                   "serviceType": "Corporate Gifting",
                   "areaServed": [
@@ -307,7 +311,7 @@ export default function Services() {
               >
                 {/* Image Section */}
                 <div className="service-image-side">
-                  <div className="service-image-container">
+                  <Link href={`/services/${service.slug}`} className="service-image-container" style={{ display: 'block' }}>
                     <Image
                       src={service.image}
                       alt={service.imageAlt}
@@ -316,7 +320,7 @@ export default function Services() {
                       style={{ objectFit: 'cover' }}
                       priority={index === 0}
                     />
-                  </div>
+                  </Link>
                 </div>
 
                 {/* Content Section */}
@@ -349,7 +353,9 @@ export default function Services() {
                   </div>
 
                   <h2 style={{ fontSize: '24px', fontWeight: 800, color: 'var(--text-primary)', letterSpacing: '-0.5px' }}>
-                    {service.title}
+                    <Link href={`/services/${service.slug}`} style={{ color: 'inherit', textDecoration: 'none' }}>
+                      {service.title}
+                    </Link>
                   </h2>
 
                   <p style={{ color: 'var(--text-secondary)', fontSize: '15px', lineHeight: '1.7' }}>
@@ -366,8 +372,11 @@ export default function Services() {
                     ))}
                   </ul>
 
-                  <div style={{ marginTop: '8px' }}>
-                    <Link href="/contact" className="btn btn-primary">
+                  <div style={{ marginTop: '12px', display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                    <Link href={`/services/${service.slug}`} className="btn btn-primary">
+                      Explore Details &rarr;
+                    </Link>
+                    <Link href="/contact" className="btn btn-secondary">
                       Enquire Now
                     </Link>
                   </div>
