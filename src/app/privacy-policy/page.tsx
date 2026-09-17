@@ -92,9 +92,9 @@ export default function PrivacyPolicy() {
             Like any other website, Comtech Systems uses &apos;cookies&apos;. These cookies are used to store information including visitors&apos; preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users&apos; experience by customizing our web page content based on visitors&apos; browser type and/or other information.
           </p>
 
-          <h2 style={{ fontSize: '20px', fontWeight: 700, marginTop: '32px', marginBottom: '12px' }}>Google DoubleClick DART Cookie</h2>
+          <h2 style={{ fontSize: '20px', fontWeight: 700, marginTop: '32px', marginBottom: '12px' }}>Google DoubleClick DART Cookie &amp; AdSense</h2>
           <p style={{ marginBottom: '20px' }}>
-            Google is one of the third-party vendors on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to www.website.com and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy at the following URL — <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-color)' }}>https://policies.google.com/technologies/ads</a>.
+            Google is one of the third-party vendors on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to www.comtech-systems.in and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy at the following URL — <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-color)' }}>https://policies.google.com/technologies/ads</a>.
           </p>
 
           <h2 style={{ fontSize: '20px', fontWeight: 700, marginTop: '32px', marginBottom: '12px' }}>Our Advertising Partners</h2>
