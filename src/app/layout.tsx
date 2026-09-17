@@ -7,6 +7,7 @@ import { QuoteModalProvider } from "@/context/QuoteModalContext";
 import QuoteModal from "@/components/QuoteModal";
 import FloatingWidgets from "@/components/FloatingWidgets";
 import Preloader from "@/components/Preloader";
+import GoogleAdSense from "@/components/GoogleAdSense";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.comtech-systems.in'),
@@ -329,12 +330,7 @@ export default function RootLayout({
           src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
           strategy="afterInteractive"
         />
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9564494037866343"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
+        <GoogleAdSense publisherId="ca-pub-9564494037866343" />
       </body>
     </html>
   );
