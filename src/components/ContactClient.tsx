@@ -101,7 +101,7 @@ export default function ContactClient() {
       `*Service Required:* ${form.serviceType || 'N/A'}\n\n` +
       `*Message:*\n${form.message}`
     );
-    window.open(`https://wa.me/${OWNER_WHATSAPP}?text=${text}`, '_blank');
+    window.open(`https://wa.me/${OWNER_WHATSAPP}?text=${text}`, '_blank', 'noopener,noreferrer');
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
