@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { blogPosts, BlogPost } from '../posts';
+import { blogPosts } from '../posts';
 import { Calendar, Clock, ArrowLeft, User } from 'lucide-react';
 
 interface PageProps {

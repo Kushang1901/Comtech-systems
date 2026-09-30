@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { blogPosts } from './posts';
-import { MapPin, Calendar, Clock, ArrowRight } from 'lucide-react';
+import { Calendar, Clock, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Blog | IT Repairs, Printer Tips & Recycling Insights — Comtech Systems',

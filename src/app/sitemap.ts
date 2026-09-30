@@ -1,80 +1,20 @@
 import { MetadataRoute } from 'next';
-import { blogPosts } from './blog/posts';
-import { servicesData } from '@/data/servicesData';
+import { buildDynamicSitemap } from '@/lib/seo';
+
+/**
+ * Dynamic XML Sitemap with Respected Priority Calibration
+ * Automatically aggregates:
+ * - Core Authority & Brand Pages (Priority 1.00 - 0.80)
+ * - Dynamic Primary Services & Custom Slugs (Priority 0.90)
+ * - Targeted Programmatic Landing Pages (Priority 0.85)
+ * - Dynamic Technical Blog Guides with publication dates (Priority 0.75)
+ * - Legal & Policy Compliance Pages (Priority 0.30)
+ * - Google Image Sitemap metadata for maximum rich-snippet indexation
+ *
+ * Revalidates daily (86400s) to keep search crawler caches fresh.
+ */
+export const revalidate = 86400;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.comtech-systems.in';
-
-  const dynamicServices = servicesData.map((service) => ({
-    url: `${baseUrl}/services/${service.slug}`,
-    lastModified: new Date('2026-08-15'),
-    changeFrequency: 'weekly' as const,
-    priority: 0.85,
-  }));
-
-  const dynamicPosts = blogPosts.map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date('2026-08-15'),
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }));
-
-  const staticPages = [
-    {
-      url: baseUrl,
-      lastModified: new Date('2026-08-15'),
-      changeFrequency: 'weekly' as const,
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/services`,
-      lastModified: new Date('2026-08-15'),
-      changeFrequency: 'weekly' as const,
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date('2026-08-15'),
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date('2026-08-15'),
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/careers`,
-      lastModified: new Date('2026-08-15'),
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/blog`,
-      lastModified: new Date('2026-08-15'),
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/privacy-policy`,
-      lastModified: new Date('2026-08-15'),
-      changeFrequency: 'monthly' as const,
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/terms-of-service`,
-      lastModified: new Date('2026-08-15'),
-      changeFrequency: 'monthly' as const,
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/disclaimer`,
-      lastModified: new Date('2026-08-15'),
-      changeFrequency: 'monthly' as const,
-      priority: 0.3,
-    },
-  ];
-
-  return [...staticPages, ...dynamicServices, ...dynamicPosts];
+  return buildDynamicSitemap();
 }

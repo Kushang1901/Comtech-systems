@@ -59,7 +59,7 @@ export const servicesData: ServiceItem[] = [
   {
     id: 'computers',
     slug: 'computers-and-laptops',
-    aliases: ['computers', 'computers-laptops', 'laptops-repair', 'computer-repair-gurgaon'],
+    aliases: ['computers', 'computers-laptops', 'laptops-repair', 'computer-repair-gurgaon', 'laptop-repair-gurgaon', 'corporate-it-amc-gurgaon'],
     title: 'Computers & Laptops — Sales & Repair in Gurgaon & Noida',
     shortTitle: 'Computers & Laptops',
     tag: 'Sales, Repair & Upgrades',
@@ -251,7 +251,7 @@ export const servicesData: ServiceItem[] = [
   {
     id: 'printers',
     slug: 'printers-and-cartridges',
-    aliases: ['printers', 'printers-cartridges', 'printer-repair-gurgaon', 'cartridge-refill-noida'],
+    aliases: ['printers', 'printers-cartridges', 'printer-repair-gurgaon', 'cartridge-refill-noida', 'printer-repair-noida-extension'],
     title: 'Printers & Cartridges — Repair, Refill & Recycling',
     shortTitle: 'Printers & Cartridges',
     tag: 'Servicing, Refill & Recycling',
@@ -629,7 +629,7 @@ export const servicesData: ServiceItem[] = [
   {
     id: 'gifting',
     slug: 'corporate-gifting',
-    aliases: ['gifting', 'corporate-gifts', 'corporate-gifting-gurgaon', 'customized-gifts-delhi-ncr'],
+    aliases: ['gifting', 'corporate-gifts', 'corporate-gifting-gurgaon', 'customized-gifts-delhi-ncr', 'custom-corporate-gifting-delhi-ncr'],
     title: 'Corporate Gifting — Customized Gifts for Delhi NCR Businesses',
     shortTitle: 'Corporate Gifting',
     tag: 'Curated Gifts & Custom Branding',
