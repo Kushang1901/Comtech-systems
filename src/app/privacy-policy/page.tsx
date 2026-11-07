@@ -92,10 +92,24 @@ export default function PrivacyPolicy() {
             Like any other website, Comtech Systems uses &apos;cookies&apos;. These cookies are used to store information including visitors&apos; preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users&apos; experience by customizing our web page content based on visitors&apos; browser type and/or other information.
           </p>
 
-          <h2 style={{ fontSize: '20px', fontWeight: 700, marginTop: '32px', marginBottom: '12px' }}>Google DoubleClick DART Cookie &amp; AdSense</h2>
-          <p style={{ marginBottom: '20px' }}>
-            Google is one of the third-party vendors on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to www.comtech-systems.in and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy at the following URL — <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-color)' }}>https://policies.google.com/technologies/ads</a>.
+          <h2 style={{ fontSize: '20px', fontWeight: 700, marginTop: '32px', marginBottom: '12px' }}>Google AdSense &amp; Third-Party Advertising Policy</h2>
+          <p style={{ marginBottom: '16px' }}>
+            Comtech Systems partners with Google AdSense to serve advertisements on our website. As part of this partnership, we adhere strictly to Google&apos;s Advertising and Content Policies:
           </p>
+          <ul style={{ paddingLeft: '20px', marginBottom: '20px', listStyleType: 'disc' }}>
+            <li style={{ marginBottom: '8px' }}>
+              <strong>Third-Party Vendor Cookies:</strong> Third-party vendors, including Google, use cookies to serve ads based on a user&apos;s prior visits to our website or other websites across the internet.
+            </li>
+            <li style={{ marginBottom: '8px' }}>
+              <strong>Personalized Advertising:</strong> Google&apos;s use of advertising cookies enables it and its partners to serve ads to users based on their visits to www.comtech-systems.in and/or other sites across the World Wide Web.
+            </li>
+            <li style={{ marginBottom: '8px' }}>
+              <strong>Opting Out of Personalized Ads:</strong> Users may opt out of personalized advertising at any time by visiting <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-color)' }}>Google Ads Settings</a>.
+            </li>
+            <li style={{ marginBottom: '8px' }}>
+              <strong>Third-Party Cookie Opt-Out:</strong> Alternatively, users can opt out of third-party vendor cookies for personalized advertising by visiting <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-color)' }}>www.aboutads.info</a> or the Network Advertising Initiative at <a href="https://www.networkadvertising.org/choices/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-color)' }}>www.networkadvertising.org/choices/</a>.
+            </li>
+          </ul>
 
           <h2 style={{ fontSize: '20px', fontWeight: 700, marginTop: '32px', marginBottom: '12px' }}>Our Advertising Partners</h2>
           <p style={{ marginBottom: '20px' }}>

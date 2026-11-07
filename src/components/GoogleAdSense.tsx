@@ -1,25 +1,18 @@
-'use client';
-
-import { useEffect } from 'react';
+import Script from 'next/script';
 
 interface GoogleAdSenseProps {
   publisherId: string;
 }
 
 export default function GoogleAdSense({ publisherId }: GoogleAdSenseProps) {
-  useEffect(() => {
-    if (!publisherId) return;
+  if (!publisherId) return null;
 
-    const scriptId = 'google-adsense-script';
-    if (document.getElementById(scriptId)) return;
-
-    const script = document.createElement('script');
-    script.id = scriptId;
-    script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${publisherId}`;
-    script.async = true;
-    script.crossOrigin = 'anonymous';
-    document.head.appendChild(script);
-  }, [publisherId]);
-
-  return null;
+  return (
+    <Script
+      id="google-adsense"
+      src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${publisherId}`}
+      strategy="afterInteractive"
+      crossOrigin="anonymous"
+    />
+  );
 }

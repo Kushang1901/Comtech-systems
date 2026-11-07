@@ -2,7 +2,8 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { blogPosts } from '../posts';
-import { Calendar, Clock, ArrowLeft, User } from 'lucide-react';
+import { Calendar, Clock, ArrowLeft, User, Award, CheckCircle } from 'lucide-react';
+import AdUnit from '@/components/AdUnit';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -174,6 +175,61 @@ export default async function BlogPostPage({ params }: PageProps) {
           }}
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
+
+        {/* Content-Compliant Advertisement Placement */}
+        <AdUnit format="auto" />
+
+        {/* E-E-A-T Verified Author Card */}
+        <div style={{
+          marginTop: '36px',
+          padding: '24px',
+          background: '#f8fafc',
+          borderRadius: '12px',
+          border: '1px solid var(--border-color)',
+          display: 'flex',
+          gap: '20px',
+          alignItems: 'flex-start',
+        }}>
+          <div style={{
+            width: '54px',
+            height: '54px',
+            borderRadius: '50%',
+            background: 'var(--accent-color)',
+            color: '#fff',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '22px',
+            fontWeight: 800,
+            flexShrink: 0
+          }}>
+            SB
+          </div>
+          <div style={{ flex: 1 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+              <h3 style={{ fontSize: '17px', fontWeight: 700, margin: 0 }}>{post.author}</h3>
+              <span style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '3px',
+                fontSize: '11px',
+                background: '#e0f2fe',
+                color: '#0284c7',
+                padding: '2px 8px',
+                borderRadius: '50px',
+                fontWeight: 600
+              }}>
+                <CheckCircle size={11} /> Verified Tech Lead
+              </span>
+            </div>
+            <p style={{ fontSize: '13px', color: 'var(--text-secondary)', margin: '0 0 8px 0', lineHeight: '1.5' }}>
+              Founder &amp; Senior Hardware Systems Specialist at Comtech Systems. With over 20+ years of component-level diagnostic experience across computer motherboards, laser printers, and enterprise IT infrastructure in Delhi NCR.
+            </p>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '12px', color: '#64748b' }}>
+              <Award size={13} /> Technically verified according to Comtech Systems Quality Standards.
+            </div>
+          </div>
+        </div>
 
         {/* Footer Card */}
         <div style={{

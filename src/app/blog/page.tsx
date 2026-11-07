@@ -1,7 +1,8 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { blogPosts } from './posts';
-import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import { Calendar, Clock, ArrowRight, BookOpen, Layers } from 'lucide-react';
+import AdUnit from '@/components/AdUnit';
 
 export const metadata: Metadata = {
   title: 'Blog | IT Repairs, Printer Tips & Recycling Insights — Comtech Systems',
@@ -50,20 +51,30 @@ export default function BlogIndex() {
       <section className="section section-bg" style={{ borderBottom: '1px solid var(--border-color)', padding: '56px 0', textAlign: 'center' }}>
         <div className="container">
           <span style={{ display: 'inline-block', background: '#eff1fb', color: 'var(--accent-color)', padding: '5px 14px', borderRadius: '50px', fontSize: '12px', fontWeight: 700, marginBottom: '14px', border: '1px solid #dbeafe' }}>
-            Resource Center
+            Resource Center &bull; {blogPosts.length} Guides Available
           </span>
           <h1 style={{ fontSize: '36px', fontWeight: 800, marginBottom: '14px', letterSpacing: '-1px' }}>
-            Tech Insights &amp; Guides
+            Tech Insights, Diagnostic &amp; Maintenance Guides
           </h1>
-          <p style={{ fontSize: '17px', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>
-            Expert advice on computer maintenance, office printing efficiency, and sustainable electronics recycling from Comtech Systems.
+          <p style={{ fontSize: '17px', color: 'var(--text-secondary)', maxWidth: '680px', margin: '0 auto 20px auto' }}>
+            Comprehensive hardware tutorials, printer troubleshooting, commercial printing prepress standards, and sustainable recycling insights verified by senior IT engineers.
           </p>
+
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap', fontSize: '13px', color: 'var(--text-secondary)' }}>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+              <BookOpen size={14} color="var(--accent-color)" /> {blogPosts.length} Technical Articles
+            </span>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+              <Layers size={14} color="var(--accent-color)" /> 5 Specialized Topics
+            </span>
+          </div>
         </div>
       </section>
 
       {/* ── BLOG LISTING ── */}
       <section className="section">
         <div className="container">
+          <AdUnit format="auto" />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px', margin: '20px 0' }}>
             {blogPosts.map((post) => (
               <article
